@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhangzhuo.mapper.BrandMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.zhangzhuo.entity.Brand">
+        <id column="id" property="id" />
+        <result column="cname" property="cname" />
+        <result column="ename" property="ename" />
+        <result column="cid" property="cid" />
+        <result column="cat_name" property="catName" />
+        <result column="logo" property="logo" />
+        <result column="url" property="url" />
+        <result column="remark" property="remark" />
+        <result column="source" property="source" />
+        <result column="status" property="status" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cname, ename, cid, cat_name, logo, url, remark, source, status, gmt_create, gmt_modified
+    </sql>
+
+    <select id="getPage" resultType="org.zhangzhuo.entity.Brand">
+        SELECT * FROM t_brand
+    </select>
+
+</mapper>

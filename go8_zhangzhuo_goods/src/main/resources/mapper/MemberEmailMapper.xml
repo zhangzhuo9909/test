@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhangzhuo.mapper.MemberEmailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.zhangzhuo.entity.MemberEmail">
+        <id column="id" property="id" />
+        <result column="sign" property="sign" />
+        <result column="login_name" property="loginName" />
+        <result column="type" property="type" />
+        <result column="url" property="url" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="new_email" property="newEmail" />
+        <result column="status" property="status" />
+        <result column="send_status" property="sendStatus" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, sign, login_name, type, url, start_time, end_time, new_email, status, send_status, gmt_create, gmt_modified
+    </sql>
+
+</mapper>

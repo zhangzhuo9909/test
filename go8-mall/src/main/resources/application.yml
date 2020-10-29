@@ -1,0 +1,29 @@
+server:
+  port: 8889
+spring:
+  application:
+    name: zhangzhuo-mall
+  thymeleaf:
+    cache: false #方便开发
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url:  jdbc:mysql://localhost:3306/go8db?characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 123
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+  #es配置
+  elasticsearch:
+    cluster-nodes: 192.168.118.120:9300
+#指定mapper.xml位置
+mybatis-plus:
+  mapper-locations:
+    classpath: mapper/*.xml
+  #输出sql日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    root: info
+#custom properties
+LOGIN_URL:  http://localhost:${server.port}/login.html

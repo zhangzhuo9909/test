@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>go8商城</title>
+    <link rel="stylesheet" href="/style/style.css">
+	
+</head>
+
+<body>
+    <!-- 顶部栏目 -->
+	<div id="header" th:insert="header :: header"></div>
+    <div class="wrap">
+		<div id="pay" style="margin: 10px">
+			<div>
+	    		<h1>订单信息</h1>
+	    		<h3 th:text="'订单ID：'+${order.id}"></h3>
+	    		<h3 th:text="'订单金额：'+${order.finalPayMoney}"></h3>
+	    		<h3 th:text="'订单备注：'+${order.remark}"></h3>
+    		</div>
+			<h1>请选择支付方式</h1>
+			<i-button type="primary" @click="goPay('zfb')">支付宝支付</i-button>&nbsp;&nbsp;
+			<i-button type="primary" @click="goPay('weixin')">微信支付</i-button>
+		</div>
+    </div>
+    <script th:inline="javascript">
+    var vueGoPay = new Vue({
+        el: '#pay',
+        data: {},
+        methods: {
+        	goPay:function(t){
+				if(t=="zfb")
+					window.location.href = GO8.DN.PAY+"alipay?orderId="+/*[[${order.id}]]*/;
+				else if(t=="weixin"){
+					window.location.href = GO8.DN.PAY+"wxpay/createPreOrder?orderId="+/*[[${order.id}]]*/;
+				}
+			}
+        }
+    })
+    </script>
+    <div id="footer" th:insert="footer :: copy"></div>
+</body>
+
+</html>

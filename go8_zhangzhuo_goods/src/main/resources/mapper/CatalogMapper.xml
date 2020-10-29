@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhangzhuo.mapper.CatalogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.zhangzhuo.entity.Catalog">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="code" property="code" />
+        <result column="pid" property="pid" />
+        <result column="is_parent" property="isParent" />
+        <result column="order1" property="order1" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, code, pid, is_parent, order1, gmt_create, gmt_modified
+    </sql>
+
+    <select id="getSonById" resultType="org.zhangzhuo.entity.Catalog">
+        SELECT * from t_catalog where pid = #{pid}
+    </select>
+
+    <select id="getCode" resultType="String">
+        SELECT * from t_catalog where code = #{code}
+    </select>
+</mapper>

@@ -1,0 +1,26 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: cms-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/go8db?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis-plus:
+  mapper-locations:
+    classpath: mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+fdfs:
+  so-timeout: 1501
+  connect-timeout: 601
+  thumb-image:
+    width: 150
+    height: 150
+  tracker-list:
+    - 192.168.118.110:22122

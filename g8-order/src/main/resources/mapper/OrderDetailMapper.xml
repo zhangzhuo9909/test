@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhangzhuo.mapper.OrderDetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.zhangzhuo.entity.OrderDetail">
+        <id column="id" property="id" />
+        <result column="order_id" property="orderId" />
+        <result column="product_id" property="productId" />
+        <result column="image" property="image" />
+        <result column="product_title" property="productTitle" />
+        <result column="price" property="price" />
+        <result column="number" property="number" />
+        <result column="reduce_type" property="reduceType" />
+        <result column="redduce_money" property="redduceMoney" />
+        <result column="ship_type" property="shipType" />
+        <result column="ship_money" property="shipMoney" />
+        <result column="ship_insurance" property="shipInsurance" />
+        <result column="score" property="score" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, order_id, product_id, image, product_title, price, number, reduce_type, redduce_money, ship_type, ship_money, ship_insurance, score, remark
+    </sql>
+
+</mapper>

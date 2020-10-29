@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="go8_SSO" />
+        <module name="go8_zhangzhuo_api" />
+        <module name="go8_upload_server" />
+        <module name="go8-mall" />
+        <module name="go8_search_service" />
+        <module name="go8_admin" />
+        <module name="go8_zhangzhuo_goods" />
+        <module name="g8-order" />
+        <module name="go8_cms" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="go8_goods" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="g8-order" options="-parameters" />
+      <module name="go8-mall" options="-parameters" />
+      <module name="go8_SSO" options="-parameters" />
+      <module name="go8_admin" options="-parameters" />
+      <module name="go8_cms" options="-parameters" />
+      <module name="go8_goods" options="-parameters" />
+      <module name="go8_search_service" options="-parameters" />
+      <module name="go8_upload_server" options="-parameters" />
+      <module name="go8_zhangzhuo" options="-parameters" />
+      <module name="go8_zhangzhuo_api" options="-parameters" />
+      <module name="go8_zhangzhuo_goods" options="-parameters" />
+    </option>
+  </component>
+</project>

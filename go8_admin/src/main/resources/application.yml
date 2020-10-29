@@ -1,0 +1,29 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: admin-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/go8db?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123
+    type: com.alibaba.druid.pool.DruidDataSource
+  elasticsearch:
+      cluster-nodes: 192.168.118.120:9300
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml,classpath:cms/mapper/*.xml
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+fdfs:
+  so-timeout: 1501
+  connect-timeout: 601
+  thumb-image:
+    width: 150
+    height: 150
+  tracker-list:
+    - 192.168.118.110:22122
+  #自定义配置
+#  sorageServer:  http://192.168.118.119/

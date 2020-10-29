@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zhangzhuo.mapper.AttributeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.zhangzhuo.entity.Attribute">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="type" property="type" />
+        <result column="input_type" property="inputType" />
+        <result column="cid" property="cid" />
+        <result column="gid" property="gid" />
+        <result column="required" property="required" />
+        <result column="show_order" property="showOrder" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_modified" property="gmtModified" />
+    </resultMap>
+
+    <resultMap id="BaseAttributeResultMap" type="org.zhangzhuo.VO.AttributeVO" extends="BaseResultMap">
+        <collection property="values" ofType="org.zhangzhuo.entity.AttributeValue">
+            <id column="id1" property="id"/>
+            <result column="values" property="value"/>
+        </collection>
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        a.id, a.`name`, a.`type`, a.input_type, a.cid, a.gid, a.required, a.show_order, a.gmt_create, a.gmt_modified, b.`value` AS `values`,
+        b.id AS id1
+    </sql>
+
+
+
+    <!--    <select id="getAttributeList" resultType="org.zhangzhuo.VO.AttributeVO">-->
+<!--        SELECT a.id,a.`name`,GROUP_CONCAT(b.`value`) as `values` from-->
+<!--        t_attribute a  LEFT JOIN t_attribute_value b-->
+<!--        ON a.id = b.attribute_id-->
+<!--        ${ew.CustomSqlSegment}-->
+<!--        GROUP BY a.id-->
+<!--    </select>-->
+
+    <select id="getAttributeList" resultMap="BaseAttributeResultMap">
+        SELECT
+        <include refid="Base_Column_List"></include>
+        FROM
+        t_attribute AS a
+        LEFT JOIN t_attribute_value AS b ON b.attribute_id = a.id
+        ${ew.CustomSqlSegment}
+    </select>
+</mapper>

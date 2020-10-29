@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/g8-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go8-mall/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go8_SSO/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go8_admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go8_cms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go8_search_service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go8_upload_server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go8_zhangzhuo_api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/go8_zhangzhuo_goods/src/main/java" charset="UTF-8" />
+  </component>
+</project>
