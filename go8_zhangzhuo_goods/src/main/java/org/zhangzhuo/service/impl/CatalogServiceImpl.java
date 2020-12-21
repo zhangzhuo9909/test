@@ -81,7 +81,7 @@ public class CatalogServiceImpl extends ServiceImpl<CatalogMapper, Catalog> impl
         ArrayList<Long> list = new ArrayList<>();
         //先把前台传进来的id放进list
         list.add(id);
-        //获取这个id 的一条数据
+        //根据id查询
         Catalog catalog = getById(id);
         //判断是否是父节点
         if(catalog.getIsParent()){

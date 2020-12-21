@@ -1,6 +1,7 @@
 package org.zhangzhuo.mapper;
 
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +33,7 @@ public class AttributeController {
      * @param attributeVO
      * @return
      */
+//    @ApiOperation(value = "",consumes = "application/json",produces = "application/json")
     @GetMapping("/list")
     public ServiceResponse getAttributeList(AttributeVO attributeVO){
         if(! Objects.nonNull(attributeVO)){

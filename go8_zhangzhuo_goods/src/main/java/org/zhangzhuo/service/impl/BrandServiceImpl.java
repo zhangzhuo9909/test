@@ -33,7 +33,9 @@ public class BrandServiceImpl extends ServiceImpl<BrandMapper, Brand> implements
      */
     @Override
     public PageResult<Brand> getBrandByPage(MysqlPageWrapper<Brand> brandMysqlPageWrapper) {
-        Page<Brand> page = new Page<>(brandMysqlPageWrapper.getPage(), brandMysqlPageWrapper.getSize());
+        Page<Brand> page = new Page<>(brandMysqlPageWrapper.getPage(),
+                brandMysqlPageWrapper.getSize());
+
         QueryWrapper<Brand> wrapper = new QueryWrapper<>();
         if(Objects.nonNull(brandMysqlPageWrapper.getT())){
             //从前台获取到cid 的值

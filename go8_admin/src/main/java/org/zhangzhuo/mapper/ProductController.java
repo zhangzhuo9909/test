@@ -39,12 +39,10 @@ public class ProductController {
     public ServiceResponse getProductAdd(Product product, @RequestParam(value = "index",defaultValue = "1") Long index, @RequestParam(value = "size",defaultValue = "10") Long size){
         try {
             PageResult<Product> list = productService.getProductBy(product,index,size);
-//            System.out.println(list);
             //把数据和前台
             HashMap<String, Object> map = new HashMap<>();
             map.put("rows",list.getRecords());
             map.put("total",list.getTotal());
-//            System.out.println(map);
             return ServiceResponse.ok(map);
         } catch (Exception e) {
             e.printStackTrace();
